@@ -3,11 +3,30 @@ import java.util.Scanner;
 public class Lab00_assignment2 {
 
     public static void main(String[] args) {
-        int[] numbers = new int[101];
-        for(int i = 0;i <= 100; i++){
-            numbers[i] = i;
+    }
+    
+    public int[] createArray(int size){
+        int[] array = new int[size];
+        for(int i = 0; i < array.length; i++){
+            int num = (int)(101* Math.random());
+            array[i] = num;
         }
-        System.out.println(numbers[101]);
+    }
+    public int findSum(int[] array, boolean doYouWantOdds){
+
+        int sum = 0;
+            
+        if (doYouWantOdds){
+           for(int i = 1; i<array.length ; i+=2){
+                sum += array[i];
+            }
+        } else{
+           for(int i = 0; i<array.length ; i+=2){
+                sum += array[i];
+            }
+        }
+        return sum;
+        }
 
 
 
@@ -21,10 +40,6 @@ public class Lab00_assignment2 {
 
 
 
-        
-        
-        
-        
         
         
         
