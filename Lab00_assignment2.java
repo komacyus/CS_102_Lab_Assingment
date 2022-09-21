@@ -73,13 +73,18 @@ public class Lab00_assignment2 {
         int choice;
         String s1 = "Menu%n 1-min and max values of the array %n 2-average of the array% 3-odd sum%n 4-even sum %n 5-exit";
 
+        // if the choice is exit quits
         while (isExit) {
             System.out.println(s1);
             System.out.print("Enter a choice");
             choice = in.nextInt();
 
             if ( choice == 1) { // min max
-
+                int max ;
+                max = findMax(numbers);
+                System.out.println("the max value is " + max );
+                int min = findMin(numbers);
+                System.out.println("the min value is " + min);
                 
             }
             else if( choice == 2){ //average
@@ -105,4 +110,152 @@ public class Lab00_assignment2 {
         }
         in.close();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /**
+     * finds the max value in givven array
+     * @param array
+     * @return max integer
+     */
+    public  int findMax (int array[]) {
+        int max = array[0];
+
+         for (int i = 1; i < array.length; i++)
+             if (array[i] > max) {
+                max = array[i];
+             }
+       
+         return max;
+    }
+
+    /**
+     * finds the min value in givven array
+     * @param array
+     * @return min integer
+     */
+    public  int findMin (int array[]) {
+        int min = array[0];
+
+        for (int i = 1; i < array.length; i++) {
+            if (array[i] < min) {
+                min = array[i];
+            }
+        }
+
+        return min;
+    } 
 }
