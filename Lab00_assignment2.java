@@ -1,39 +1,33 @@
 import java.util.Scanner;
-import java.util.concurrent.ArrayBlockingQueue;
 
 public class Lab00_assignment2 {
 
     public static void main(String[] args) {
 
-
-        
         Scanner in = new Scanner(System.in);
         Scanner key = new Scanner(System.in);
         boolean isExit = true;
         boolean isNum = true;
         int choice;
         int size;
-        int finalSize;
-        String s1 = "Menu%n 1-min and max values of the array %n 2-average of the array%n 3-odd sum%n 4-even sum %n 5-exit";
-
+        int finalSize = 0;
+        String s1 = "\nMenu\n 1-min and max values of the array \n 2-average of the array\n 3-odd sum\n 4-even sum \n 5-exit\n";
 
         while (isNum) {
 
-            System.out.print("Enter the size of array:");
+            System.out.print("Enter the size of array: ");
             size = key.nextInt();
-            if (key.hasNextInt()) {
-                finalSize = size;
+            finalSize = size;
                 isNum = false;
-            }
+            
             
         }
         int[] numbers = createArray(finalSize);
-
-
+        showArray(numbers);
         // if the choice is exit quits
         while (isExit) {
             System.out.println(s1);
-            System.out.print("Enter a choice");
+            System.out.print("Enter a choice: ");
             choice = in.nextInt();
 
             if ( choice == 1) { // min max
@@ -45,14 +39,16 @@ public class Lab00_assignment2 {
                 
             }
             else if( choice == 2){ //average
-                
-
+                int[] arr = average(numbers);
+                showArray(arr);
             }
             else if ( choice == 3) { //odd sum
-                
+                int sum = findSum(numbers, true);
+                System.out.println(sum);
             }
             else if ( choice == 4) { //even sum
-                
+                int sum = findSum(numbers, false);
+                System.out.println(sum);
             }
             else if ( choice == 5) { //exit
                 System.out.println("Exitting!");
@@ -66,6 +62,7 @@ public class Lab00_assignment2 {
             
         }
         in.close();
+        key.close();
     }
     
     
@@ -75,6 +72,7 @@ public class Lab00_assignment2 {
             int num = (int)(101* Math.random());
             array[i] = num;
         }
+        return array;
     }
     public static int findSum(int[] array, boolean doYouWantOdds){
 
@@ -92,95 +90,7 @@ public class Lab00_assignment2 {
         return sum;
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        public int[] average(int[] arr){
+        public static int[] average(int[] arr){
 
             int sum = 0;
             int[] newArray = new int[arr.length];
@@ -188,82 +98,16 @@ public class Lab00_assignment2 {
             for (int i = 0; i < arr.length; i++){
             sum += arr[i];
             }
+            int avr = sum/arr.length;
 
             for( int i = 0; i < arr.length; i++){
-                newArray[i] = sum - arr[i] ;
+                newArray[i] = avr - arr[i] ;
             }
 
             return newArray;
 
         }
  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     /**
      * finds the max value in givven array
      * @param array
@@ -296,4 +140,11 @@ public class Lab00_assignment2 {
 
         return min;
  } 
+    public static void showArray(int[] arr){
+        System.out.print("[");
+                for (int i = 0; i < arr.length-1; i++) {
+                    System.out.print(arr[i] + ", ");
+                }
+                System.out.print(arr[arr.length-1] + "]");
+    }
 }
