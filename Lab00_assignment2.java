@@ -8,20 +8,22 @@ public class Lab00_assignment2 {
 
         
         Scanner in = new Scanner(System.in);
+        Scanner key = new Scanner(System.in);
         boolean isExit = true;
         boolean isNum = true;
         int choice;
         int size;
         int finalSize;
-        String s1 = "Menu%n 1-min and max values of the array %n 2-average of the array% 3-odd sum%n 4-even sum %n 5-exit";
+        String s1 = "Menu%n 1-min and max values of the array %n 2-average of the array%n 3-odd sum%n 4-even sum %n 5-exit";
 
 
         while (isNum) {
 
             System.out.print("Enter the size of array:");
-            size = in.nextInt();
-            if (in.hasNextInt()) {
+            size = key.nextInt();
+            if (key.hasNextInt()) {
                 finalSize = size;
+                isNum = false;
             }
             
         }
@@ -65,7 +67,7 @@ public class Lab00_assignment2 {
         }
         in.close();
     }
-    }
+    
     
     public static int[] createArray(int size){
         int[] array = new int[size];
@@ -267,7 +269,7 @@ public class Lab00_assignment2 {
      * @param array
      * @return max integer
      */
-    public s int findMax (int array[]) {
+    public static int findMax (int array[]) {
         int max = array[0];
 
          for (int i = 1; i < array.length; i++)
@@ -283,7 +285,7 @@ public class Lab00_assignment2 {
      * @param array
      * @return min integer
      */
-    public  int findMin (int array[]) {
+    public static  int findMin (int array[]) {
         int min = array[0];
 
         for (int i = 1; i < array.length; i++) {
@@ -294,3 +296,4 @@ public class Lab00_assignment2 {
 
         return min;
  } 
+}
