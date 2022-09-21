@@ -65,9 +65,10 @@ public class Lab00_assignment2 {
             choice = in.nextInt();
 
             if ( choice == 1) { // min max
-                int max = findMax(number);
+                int max ;
+                max = findMax(numbers);
                 System.out.println("the max value is " + max );
-                int min = findMin(number);
+                int min = findMin(numbers);
                 System.out.println("the min value is " + min);
                 
             }
@@ -215,7 +216,7 @@ public class Lab00_assignment2 {
      * @param array
      * @return max integer
      */
-    public int findMax (int array[]) {
+    public  int findMax (int array[]) {
         int max = array[0];
 
          for (int i = 1; i < array.length; i++)
@@ -231,7 +232,7 @@ public class Lab00_assignment2 {
      * @param array
      * @return min integer
      */
-    public int findMin (int array[]) {
+    public  int findMin (int array[]) {
         int min = array[0];
 
         for (int i = 1; i < array.length; i++) {
