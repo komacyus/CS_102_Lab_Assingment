@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.ArrayBlockingQueue;
 
 public class Lab00_assignment2 {
 
@@ -177,8 +178,23 @@ public class Lab00_assignment2 {
 
 
 
+        public int[] average(int[] arr){
 
+            int sum = 0;
+            int[] newArray = new int[arr.length];
 
+            for (int i = 0; i < arr.length; i++){
+            sum += arr[i];
+            }
+
+            for( int i = 0; i < arr.length; i++){
+                newArray[i] = sum - arr[i] ;
+            }
+
+            return newArray;
+
+        }
+ 
 
 
 
